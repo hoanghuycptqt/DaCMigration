@@ -1,0 +1,97 @@
+/* ============================================================
+   Button — Aligned with Bosch Frontend Kit button patterns
+   Uses: major-accent (primary), neutral, minor-accent (ghost)
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Sizes (Bosch uses 48px/40px/32px standard heights) */
+.btn--sm { padding: 6px var(--space-3); font-size: var(--font-size-xs); min-height: 32px; }
+.btn--md { padding: var(--space-2) var(--space-4); font-size: var(--font-size-base); min-height: 40px; }
+.btn--lg { padding: var(--space-3) var(--space-6); font-size: var(--font-size-md); min-height: 48px; }
+
+/* Primary — Bosch major-accent */
+.btn--primary {
+  background-color: var(--major-accent__enabled__fill__default);
+  color: var(--major-accent__enabled__front__default);
+}
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--major-accent__enabled__fill__hovered);
+}
+.btn--primary:active:not(:disabled) {
+  background-color: var(--major-accent__enabled__fill__pressed);
+}
+.btn--primary:disabled {
+  background-color: var(--bosch-gray-80);
+  color: var(--bosch-gray-60);
+}
+
+/* Secondary — Bosch neutral */
+.btn--secondary {
+  background-color: var(--neutral__enabled__fill__default);
+  color: var(--neutral__enabled__front__default);
+  border: none;
+}
+.btn--secondary:hover:not(:disabled) {
+  background-color: var(--neutral__enabled__fill__hovered);
+}
+.btn--secondary:disabled {
+  background-color: var(--bosch-gray-90);
+  color: var(--bosch-gray-70);
+}
+
+/* Neutral — Bordered outline */
+.btn--neutral {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+.btn--neutral:hover:not(:disabled) {
+  background-color: var(--plain__enabled__fill__hovered);
+}
+.btn--neutral:disabled {
+  color: var(--bosch-gray-80);
+  border-color: var(--bosch-gray-85);
+}
+
+/* Danger — Bosch major-signal-error */
+.btn--danger {
+  background-color: var(--major-signal-error__enabled__fill__default);
+  color: var(--major-signal-error__enabled__front__default);
+}
+.btn--danger:hover:not(:disabled) {
+  background-color: var(--bosch-red-40);
+}
+.btn--danger:disabled {
+  background-color: var(--bosch-gray-80);
+  color: var(--bosch-gray-60);
+}
+
+/* Ghost — Bosch minor-accent (integrated link-style) */
+.btn--ghost {
+  background: none;
+  color: var(--minor-accent__enabled__front__default);
+}
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--minor-accent__enabled__fill__hovered);
+}
+.btn--ghost:disabled {
+  color: var(--bosch-gray-80);
+}

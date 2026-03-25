@@ -1,0 +1,83 @@
+/* ============================================================
+   WizardStepper — Bosch progress/stepper pattern
+   Uses: major-accent for active, major-signal-success for done
+   ============================================================ */
+
+.wizard-stepper {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-6);
+  gap: 0;
+}
+
+.wizard-stepper__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.wizard-stepper__circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.wizard-stepper__label {
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  transition: color var(--transition-normal);
+}
+
+.wizard-stepper__line {
+  flex: 1;
+  height: 2px;
+  min-width: 24px;
+  background-color: var(--bosch-gray-80);
+  margin: 0 var(--space-1);
+  margin-bottom: 18px;
+  transition: background-color var(--transition-normal);
+}
+
+/* Completed — Bosch major-signal-success */
+.wizard-stepper__step--completed .wizard-stepper__circle {
+  background-color: var(--major-signal-success__enabled__fill__default);
+  color: var(--major-signal-success__enabled__front__default);
+}
+.wizard-stepper__step--completed .wizard-stepper__label {
+  color: var(--bosch-green-50);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Active — Bosch major-accent */
+.wizard-stepper__step--active .wizard-stepper__circle {
+  background-color: var(--major-accent__enabled__fill__default);
+  color: var(--major-accent__enabled__front__default);
+}
+.wizard-stepper__step--active .wizard-stepper__label {
+  color: var(--bosch-blue-50);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Upcoming — Bosch neutral */
+.wizard-stepper__step--upcoming .wizard-stepper__circle {
+  background-color: var(--neutral__enabled__fill__default);
+  color: var(--text-muted);
+}
+.wizard-stepper__step--upcoming .wizard-stepper__label {
+  color: var(--text-muted);
+}
+
+.wizard-stepper__line--completed {
+  background-color: var(--bosch-green-50);
+}

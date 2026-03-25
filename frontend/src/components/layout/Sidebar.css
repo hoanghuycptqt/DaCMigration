@@ -1,0 +1,89 @@
+/* ============================================================
+   Sidebar — Bosch m-side-navigation pattern
+   Uses: primary surface on white, active state with accent bar
+   ============================================================ */
+
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--surface-card);
+  border-right: 1px solid var(--border-default);
+  overflow-y: auto;
+  z-index: var(--z-sidebar);
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) 0;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: var(--sidebar-item-height);
+  padding: 0 var(--space-4);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  text-align: left;
+  width: 100%;
+  position: relative;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar__item:hover {
+  background-color: var(--plain__enabled__fill__hovered);
+}
+
+.sidebar__item--active {
+  background-color: var(--bosch-blue-95);
+  color: var(--bosch-blue-50);
+  font-weight: var(--font-weight-bold);
+}
+
+.sidebar__item--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--bosch-blue-50);
+}
+
+.sidebar__icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  line-height: 1;
+  color: inherit;
+}
+
+.sidebar__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__divider {
+  padding: var(--space-4) var(--space-4) var(--space-2);
+  margin-top: var(--space-2);
+  border-top: 1px solid var(--border-default);
+}
+
+.sidebar__divider-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

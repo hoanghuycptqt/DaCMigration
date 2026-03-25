@@ -1,0 +1,35 @@
+/* ============================================================
+   NotificationBanner — Bosch a-notification pattern
+   Uses: minor-signal-* semantic variables
+   ============================================================ */
+
+.notification-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+/* Bosch minor-signal fills */
+.notification-banner--info {
+  background-color: var(--minor-signal-neutral__enabled__fill__default);
+  color: var(--minor-signal-neutral__enabled__front__default);
+}
+.notification-banner--success {
+  background-color: var(--minor-signal-success__enabled__fill__default);
+  color: var(--minor-signal-success__enabled__front__default);
+}
+.notification-banner--warning {
+  background-color: var(--minor-signal-warning__enabled__fill__default);
+  color: var(--minor-signal-warning__enabled__front__default);
+}
+.notification-banner--error {
+  background-color: var(--minor-signal-error__enabled__fill__default);
+  color: var(--minor-signal-error__enabled__front__default);
+}
+
+.notification-banner__icon { flex-shrink: 0; font-size: var(--font-size-md); line-height: 1.4; }
+.notification-banner__text { flex: 1; }

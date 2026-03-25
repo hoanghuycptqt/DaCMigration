@@ -1,0 +1,25 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell__content {
+  margin-top: var(--header-height);
+  margin-left: var(--sidebar-width);
+  padding: var(--content-padding);
+  flex: 1;
+  background-color: var(--surface-page);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.app-shell__footer {
+  margin-left: var(--sidebar-width);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-3) var(--content-padding);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  background-color: var(--surface-page);
+  border-top: 1px solid var(--border-default);
+}

@@ -1,0 +1,22 @@
+.wizard-page__stepper {
+  margin-bottom: var(--space-6);
+}
+
+.wizard-page__content {
+  margin-bottom: var(--space-4);
+  min-height: 400px;
+}
+
+.wizard-page__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--surface-card);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
+}
+
+.wizard-page__actions-right {
+  display: flex;
+  gap: var(--space-3);
+}

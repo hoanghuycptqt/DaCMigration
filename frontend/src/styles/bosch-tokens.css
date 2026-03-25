@@ -1,0 +1,268 @@
+/* ============================================================
+   Bosch Design System — CSS Design Tokens
+   Aligned with @bosch/frontend.kit-npm v2.2.0
+   ============================================================ */
+
+:root {
+  /* ── Bosch Official Color Palette ── */
+  --bosch-red-50: #ed0007;
+  --bosch-red-45: #d50005;
+  --bosch-red-40: #be0004;
+  --bosch-red-90: #ffd9d9;
+  --bosch-red-85: #ffc6c6;
+  --bosch-red-95: #ffecec;
+
+  --bosch-blue-50: #007bc0;
+  --bosch-blue-40: #00629a;
+  --bosch-blue-30: #004975;
+  --bosch-blue-90: #d1e4ff;
+  --bosch-blue-95: #e8f1ff;
+  --bosch-blue-85: #b8d6ff;
+  --bosch-blue-80: #9dc9ff;
+
+  --bosch-green-50: #00884a;
+  --bosch-green-40: #006c3a;
+  --bosch-green-30: #005f32;
+  --bosch-green-90: #b8efc9;
+  --bosch-green-85: #9be4b3;
+  --bosch-green-95: #e2f5e7;
+
+  --bosch-yellow-85: #ffcf00;
+  --bosch-yellow-90: #ffdf95;
+  --bosch-yellow-95: #ffefd1;
+
+  --bosch-gray-95: #eff1f2;
+  --bosch-gray-90: #e0e2e5;
+  --bosch-gray-85: #d0d4d8;
+  --bosch-gray-80: #c1c7cc;
+  --bosch-gray-70: #a4abb3;
+  --bosch-gray-65: #979ea4;
+  --bosch-gray-60: #8a9097;
+  --bosch-gray-50: #71767c;
+  --bosch-gray-45: #656a6f;
+  --bosch-gray-40: #595e62;
+  --bosch-gray-35: #4e5256;
+  --bosch-gray-30: #43464a;
+  --bosch-gray-25: #383b3e;
+  --bosch-gray-20: #2e3033;
+  --bosch-gray-15: #232628;
+  --bosch-gray-10: #1a1c1d;
+
+  --bosch-purple-40: #9e2896;
+  --bosch-purple-90: #f0dcee;
+
+  --bosch-turquoise-50: #18837e;
+  --bosch-turquoise-90: #b6ede8;
+
+  --bosch-white: #fff;
+  --bosch-black: #000;
+
+  /* ── Semantic Aliases (mapped from Bosch frontend kit) ── */
+  /* Primary surface (--primary context) */
+  --major-accent__enabled__fill__default: var(--bosch-blue-50);
+  --major-accent__enabled__fill__hovered: var(--bosch-blue-40);
+  --major-accent__enabled__fill__pressed: var(--bosch-blue-30);
+  --major-accent__enabled__front__default: var(--bosch-white);
+
+  --neutral__enabled__fill__default: var(--bosch-gray-90);
+  --neutral__enabled__fill__hovered: var(--bosch-gray-80);
+  --neutral__enabled__front__default: var(--bosch-black);
+
+  --plain__enabled__fill__hovered: var(--bosch-gray-90);
+  --plain__enabled__fill__pressed: var(--bosch-gray-80);
+
+  --minor-accent__enabled__front__default: var(--bosch-blue-50);
+  --minor-accent__enabled__fill__hovered: var(--bosch-blue-90);
+
+  /* Signal colors (Bosch semantic) */
+  --minor-signal-neutral__enabled__fill__default: var(--bosch-blue-90);
+  --minor-signal-neutral__enabled__front__default: var(--bosch-black);
+  --minor-signal-error__enabled__fill__default: var(--bosch-red-90);
+  --minor-signal-error__enabled__front__default: var(--bosch-black);
+  --minor-signal-warning__enabled__fill__default: var(--bosch-yellow-90);
+  --minor-signal-warning__enabled__front__default: var(--bosch-black);
+  --minor-signal-success__enabled__fill__default: var(--bosch-green-90);
+  --minor-signal-success__enabled__front__default: var(--bosch-black);
+
+  --major-signal-success__enabled__fill__default: var(--bosch-green-50);
+  --major-signal-success__enabled__front__default: var(--bosch-white);
+  --major-signal-error__enabled__fill__default: var(--bosch-red-50);
+  --major-signal-error__enabled__front__default: var(--bosch-white);
+
+  /* ── Simplified Semantic Mapping (for component CSS) ── */
+  --brand-red: var(--bosch-red-50);
+  --brand-red-hover: var(--bosch-red-45);
+
+  --primary: var(--bosch-blue-50);
+  --primary-hover: var(--bosch-blue-40);
+  --primary-pressed: var(--bosch-blue-30);
+  --primary-light: var(--bosch-blue-95);
+  --primary-lighter: var(--bosch-blue-90);
+
+  --text-primary: var(--bosch-black);
+  --text-secondary: var(--bosch-gray-40);
+  --text-muted: var(--bosch-gray-60);
+  --text-inverse: var(--bosch-white);
+
+  --surface-page: var(--bosch-gray-95);
+  --surface-card: var(--bosch-white);
+  --surface-header: var(--bosch-gray-20);
+  --surface-table-header: var(--bosch-gray-90);
+  --surface-hover: #f5f6f7;
+  --surface-selected: var(--bosch-blue-95);
+
+  --border-subtle: var(--bosch-gray-80);
+  --border-default: var(--bosch-gray-85);
+  --border-focus: var(--bosch-blue-50);
+  --border-error: var(--bosch-red-50);
+
+  --signal-success: var(--bosch-green-50);
+  --signal-success-bg: var(--bosch-green-90);
+  --signal-success-light: var(--bosch-green-95);
+  --signal-error: var(--bosch-red-50);
+  --signal-error-bg: var(--bosch-red-90);
+  --signal-error-light: var(--bosch-red-95);
+  --signal-warning: var(--bosch-yellow-85);
+  --signal-warning-bg: var(--bosch-yellow-90);
+  --signal-warning-light: var(--bosch-yellow-95);
+  --signal-info: var(--bosch-blue-50);
+  --signal-info-bg: var(--bosch-blue-90);
+
+  --accent-purple: var(--bosch-purple-40);
+  --accent-turquoise: var(--bosch-turquoise-50);
+
+  /* ── Typography (Bosch) ── */
+  --font-family: 'boschsans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'Consolas', 'Courier New', monospace;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.8125rem;  /* 13px */
+  --font-size-base: 0.875rem; /* 14px */
+  --font-size-md: 1rem;       /* 16px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 2rem;      /* 32px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ── Spacing (Bosch 4px grid) ── */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+
+  /* ── Layout ── */
+  --header-height: 56px;
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 64px;
+  --sidebar-item-height: 48px;
+  --content-padding: 32px;
+
+  /* ── Border Radius (Bosch uses minimal radius) ── */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  /* ── Shadows (Bosch uses shadow-fill: rgba(0,0,0,0.25)) ── */
+  --shadow-fill: rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-ambient: 0 0 40px rgba(0, 0, 0, 0.06);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* ── Z-Index ── */
+  --z-sidebar: 100;
+  --z-header: 200;
+  --z-dropdown: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ============================================================
+   Base Reset & Typography (Bosch)
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--surface-page);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ============================================================
+   Bosch Icon Font Setup
+   ============================================================ */
+[class*=" boschicon-bosch-ic"],
+[class^=boschicon-bosch-ic] {
+  speak: never;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Utility Classes
+   ============================================================ */
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+.text-success { color: var(--signal-success); }
+.text-error { color: var(--signal-error); }
+.text-primary-action { color: var(--primary); }

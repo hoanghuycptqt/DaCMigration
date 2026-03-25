@@ -1,0 +1,24 @@
+.preview-split { display: flex; min-height: 500px; overflow: hidden; }
+.preview-tree { width: 280px; border-right: 1px solid var(--border-default); overflow-y: auto; }
+.preview-content { flex: 1; display: flex; flex-direction: column; }
+
+.tree-item { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-2); cursor: pointer; font-size: var(--font-size-sm); }
+.tree-item:hover { background-color: var(--surface-hover); }
+.tree-item--selected { background-color: var(--surface-selected); color: var(--primary); font-weight: var(--font-weight-medium); }
+.tree-item__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.preview-tabs { display: flex; border-bottom: 1px solid var(--border-default); }
+.preview-tab { padding: var(--space-3) var(--space-4); background: none; border: none; cursor: pointer; font-size: var(--font-size-base); font-family: var(--font-family); color: var(--text-secondary); border-bottom: 2px solid transparent; }
+.preview-tab--active { color: var(--primary); border-bottom-color: var(--primary); font-weight: var(--font-weight-medium); }
+
+.preview-body { padding: var(--space-6); overflow-y: auto; flex: 1; }
+
+.rst-rendered h1 { font-size: var(--font-size-xl); margin-bottom: var(--space-2); border-bottom: 2px solid var(--border-default); padding-bottom: var(--space-2); }
+.rst-rendered h2 { font-size: var(--font-size-lg); margin-top: var(--space-6); margin-bottom: var(--space-3); }
+.rst-rendered p, .rst-rendered .subtitle { margin-bottom: var(--space-3); color: var(--text-secondary); }
+.rst-rendered ol { padding-left: var(--space-6); margin-bottom: var(--space-4); }
+.rst-rendered table { width: 100%; border-collapse: collapse; margin-top: var(--space-3); }
+.rst-rendered th { background-color: var(--surface-table-header); padding: var(--space-2) var(--space-3); text-align: left; font-weight: var(--font-weight-semibold); border: 1px solid var(--border-default); }
+.rst-rendered td { padding: var(--space-2) var(--space-3); border: 1px solid var(--border-default); }
+
+.rst-raw { font-family: var(--font-family-mono); font-size: var(--font-size-sm); line-height: 1.6; white-space: pre; color: var(--text-primary); background: var(--surface-page); padding: var(--space-4); border-radius: var(--radius-md); overflow-x: auto; }

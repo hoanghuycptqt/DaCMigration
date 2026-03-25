@@ -1,0 +1,90 @@
+/* ============================================================
+   AppHeader — Bosch o-header (contrast surface context)
+   Uses: --bosch-gray-20 background per -contrast theme
+   ============================================================ */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  background-color: var(--bosch-gray-20);
+  padding: 0 var(--space-6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  color: var(--bosch-white);
+}
+
+.app-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.app-header__logo {
+  width: 32px;
+  height: 32px;
+  background-color: var(--bosch-red-50);
+  flex-shrink: 0;
+}
+
+.app-header__title {
+  color: var(--bosch-white);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.app-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.app-header__user-name {
+  color: var(--bosch-white);
+  font-size: var(--font-size-base);
+}
+
+.app-header__role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.app-header__role-badge--user {
+  background-color: var(--bosch-blue-50);
+  color: var(--bosch-white);
+}
+
+.app-header__role-badge--admin {
+  background-color: var(--bosch-purple-40);
+  color: var(--bosch-white);
+}
+
+.app-header__logout {
+  background: none;
+  border: none;
+  color: var(--bosch-white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.app-header__logout:hover {
+  opacity: 1;
+  background-color: var(--bosch-gray-30);
+}
