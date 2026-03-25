@@ -1,27 +1,29 @@
 /* ============================================================
-   Badge — Aligned with Bosch Frontend Kit signal patterns
-   Uses: minor-signal-* for soft badges, major-signal-* for strong
+   Badge — Stitch Corporate-Industrial Minimalism
+   Sharp 0px corners. Compact uppercase labels.
    ============================================================ */
 
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 2px 10px;
-  border-radius: var(--radius-pill);
-  font-size: var(--font-size-xs);
+  padding: 2px 8px;
+  border-radius: 0;
+  font-size: 10px;
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 /* Bosch minor-signal patterns (light bg, dark text) */
 .badge--primary {
-  background-color: var(--minor-signal-neutral__enabled__fill__default);
-  color: var(--minor-signal-neutral__enabled__front__default);
+  background-color: var(--primary-container, #007bc0);
+  color: var(--bosch-white, #fff);
 }
 .badge--success {
-  background-color: var(--minor-signal-success__enabled__fill__default);
-  color: var(--minor-signal-success__enabled__front__default);
+  background-color: var(--primary-container, #007bc0);
+  color: var(--bosch-white, #fff);
 }
 .badge--error {
   background-color: var(--minor-signal-error__enabled__fill__default);
@@ -32,8 +34,8 @@
   color: var(--minor-signal-warning__enabled__front__default);
 }
 .badge--neutral {
-  background-color: var(--neutral__enabled__fill__default);
-  color: var(--neutral__enabled__front__default);
+  background-color: var(--secondary-stitch, #1a619d);
+  color: var(--bosch-white, #fff);
 }
 .badge--purple {
   background-color: var(--bosch-purple-90);

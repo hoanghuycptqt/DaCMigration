@@ -18,6 +18,8 @@ export interface MigrationTypeInfo {
   readonly order: number;
   readonly title: string;
   readonly subtitle: string;
+  readonly source: string;
+  readonly icon: string;
   readonly badge: 'Automated' | 'Manual Upload';
   readonly description: string;
 }

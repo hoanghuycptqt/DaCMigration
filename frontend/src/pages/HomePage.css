@@ -1,63 +1,131 @@
-.page-title {
+/* ============================================================
+   HomePage — Stitch Corporate-Industrial Minimalism
+   Surface layering, numbered cards, gradient buttons.
+   ============================================================ */
+
+/* No max-width — home page fills the available content area like all other pages */
+
+/* ── Page Header ── */
+.home-page__header {
   margin-bottom: var(--space-6);
 }
 
-.home-banner {
-  margin-bottom: var(--space-6);
+.home-page__title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--on-surface, #171c21);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
 }
 
+.home-page__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--on-surface-variant, #404750);
+  line-height: var(--line-height-normal);
+}
+
+/* ── Info Banner ── */
+.home-page__banner {
+  margin-bottom: var(--space-8);
+}
+
+/* ── Migration Cards Grid ── */
 .migration-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+  padding-bottom: 80px; /* account for fixed footer */
+}
+
+/* ── Migration Card ── */
+.migration-card {
+  background-color: var(--surface-container-lowest, #fff);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.migration-card:hover {
+  border-bottom-color: var(--primary-container, #007bc0);
+}
+
+/* Step number — top right, large, faded */
+.migration-card__order-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--space-4);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--surface-container-high, #e4e8ef);
+  user-select: none;
+  line-height: 1;
+}
+
+/* Material icon */
+.migration-card__icon {
   margin-bottom: var(--space-6);
 }
 
-.migration-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+.migration-card__icon .material-symbols-outlined {
+  font-size: 36px;
+  color: var(--primary-container, #007bc0);
 }
 
-.migration-card__header {
+/* Title row: title + badge inline */
+.migration-card__title-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.migration-card__order {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  color: var(--text-inverse);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  gap: var(--space-3);
+  margin-bottom: 4px;
 }
 
 .migration-card__title {
-  font-size: var(--font-size-md);
-  margin-top: var(--space-1);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--on-surface, #171c21);
 }
 
-.migration-card__subtitle {
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
+/* Source label */
+.migration-card__source {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--on-surface-variant, #404750);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
 }
 
+/* Description text */
 .migration-card__desc {
-  color: var(--text-muted);
   font-size: var(--font-size-sm);
+  color: var(--on-surface-variant, #404750);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-6);
+  /* Truncate to 1 line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.home-link {
-  margin-top: var(--space-4);
+/* CTA button */
+.migration-card__btn {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
-.home-link a {
-  color: var(--primary);
-  font-weight: var(--font-weight-medium);
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .migration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page__title {
+    font-size: 2rem;
+  }
 }

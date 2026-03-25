@@ -1,23 +1,30 @@
 /* ============================================================
-   NotificationBanner — Bosch a-notification pattern
-   Uses: minor-signal-* semantic variables
+   NotificationBanner — Stitch Corporate-Industrial Minimalism
+   Sharp corners. Uppercase bold text for info variant.
    ============================================================ */
 
 .notification-banner {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-base);
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-radius: 0;
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-normal);
 }
 
-/* Bosch minor-signal fills */
+/* Stitch info banner — blue surface */
 .notification-banner--info {
-  background-color: var(--minor-signal-neutral__enabled__fill__default);
-  color: var(--minor-signal-neutral__enabled__front__default);
+  background-color: var(--secondary-fixed, #d1e4ff);
+  color: var(--on-surface, #171c21);
 }
+.notification-banner--info .notification-banner__text {
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--font-size-sm);
+}
+
 .notification-banner--success {
   background-color: var(--minor-signal-success__enabled__fill__default);
   color: var(--minor-signal-success__enabled__front__default);
@@ -31,5 +38,10 @@
   color: var(--minor-signal-error__enabled__front__default);
 }
 
-.notification-banner__icon { flex-shrink: 0; font-size: var(--font-size-md); line-height: 1.4; }
+.notification-banner__icon {
+  flex-shrink: 0;
+  font-size: var(--font-size-md);
+  line-height: 1.4;
+  color: var(--secondary-stitch, #1a619d);
+}
 .notification-banner__text { flex: 1; }

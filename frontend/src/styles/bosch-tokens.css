@@ -131,6 +131,22 @@
   --accent-purple: var(--bosch-purple-40);
   --accent-turquoise: var(--bosch-turquoise-50);
 
+  /* ── Stitch Surface Hierarchy Tokens ── */
+  --surface-stitch: #f7f9ff;
+  --surface-container-low: #f0f4fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #e4e8ef;
+  --surface-container-highest: #dee3ea;
+  --inverse-surface: #2c3136;
+  --on-surface: #171c21;
+  --on-surface-variant: #404750;
+  --primary-container: #007bc0;
+  --outline-variant: #bfc7d2;
+  --primary-stitch: #006199;
+  --primary-fixed: #cee5ff;
+  --secondary-stitch: #1a619d;
+  --secondary-fixed: #d1e4ff;
+
   /* ── Typography (Bosch) ── */
   --font-family: 'boschsans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-family-mono: 'Consolas', 'Courier New', monospace;
@@ -259,6 +275,13 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
+   Material Symbols Icon Setup
+   ============================================================ */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ============================================================
    Utility Classes
    ============================================================ */
 .text-muted { color: var(--text-muted); }
@@ -266,3 +289,141 @@ a:hover { text-decoration: underline; }
 .text-success { color: var(--signal-success); }
 .text-error { color: var(--signal-error); }
 .text-primary-action { color: var(--primary); }
+
+/* ============================================================
+   Page Layout — Common title & subtitle spacing
+   ============================================================ */
+.page-title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--on-surface, #171c21);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 var(--space-6) 0;   /* 24px bottom gap */
+}
+
+.page-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--on-surface-variant, #404750);
+  line-height: var(--line-height-normal);
+  margin: calc(-1 * var(--space-4)) 0 var(--space-6) 0;  /* pull up closer to title, 24px below */
+}
+
+/* Flex wrapper for title row with actions (e.g. title + button) */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);   /* 24px */
+}
+
+.page-header .page-title {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Data Table — Bosch CI Aligned
+   Clean headers, thin row separators, no vertical borders.
+   ============================================================ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  background-color: var(--surface-container-lowest, #fff);
+}
+
+/* ── Header ── */
+.data-table thead {
+  border-bottom: 2px solid var(--on-surface, #171c21);
+}
+
+.data-table th {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--on-surface, #171c21);
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+/* ── Body rows ── */
+.data-table td {
+  padding: var(--space-3) var(--space-4);
+  color: var(--on-surface, #171c21);
+  vertical-align: middle;
+}
+
+.data-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle, #e0e0e0);
+  transition: background-color var(--transition-fast);
+}
+
+.data-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--surface-hover, #f5f7fa);
+}
+
+/* Clickable rows */
+.data-table .clickable-row {
+  cursor: pointer;
+}
+
+/* Mono cells */
+.data-table .repo-cell,
+.data-table .branch-cell {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  color: var(--on-surface-variant, #404750);
+}
+
+/* Editable cells (wizard mapping) */
+.data-table .cell-readonly {
+  background-color: var(--surface-page);
+  color: var(--text-secondary);
+}
+
+.data-table .cell-input {
+  width: 100%;
+  border: 1px solid var(--border-default);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+}
+
+.data-table .cell-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.data-table .cell-input--error {
+  border-color: var(--signal-error);
+}
+
+/* ── Filter bar ── */
+.requests-filter-bar {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle, #e0e0e0);
+  background-color: transparent;
+}
+
+/* ── Pagination ── */
+.table-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle, #e0e0e0);
+  background-color: transparent;
+}

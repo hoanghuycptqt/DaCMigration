@@ -1,16 +1,16 @@
 /* ============================================================
-   Sidebar — Bosch m-side-navigation pattern
-   Uses: primary surface on white, active state with accent bar
+   Sidebar — Bosch CI Navigation
+   White background, clean left accent, crisp active states.
    ============================================================ */
 
 .sidebar {
   position: fixed;
-  top: var(--header-height);
+  top: calc(var(--header-height) + 6px);
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
-  background-color: var(--surface-card);
-  border-right: 1px solid var(--border-default);
+  background-color: #fff;
+  border-right: 1px solid var(--border-subtle, #e0e0e0);
   overflow-y: auto;
   z-index: var(--z-sidebar);
 }
@@ -18,7 +18,7 @@
 .sidebar__nav {
   display: flex;
   flex-direction: column;
-  padding: var(--space-2) 0;
+  padding: var(--space-5) 0;
 }
 
 .sidebar__item {
@@ -26,37 +26,33 @@
   align-items: center;
   gap: var(--space-3);
   height: var(--sidebar-item-height);
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-5) 0 var(--space-5);
   border: none;
   background: none;
   cursor: pointer;
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--on-surface, #171c21);
   text-align: left;
   width: 100%;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   transition: background-color var(--transition-fast), color var(--transition-fast);
+  border-left: 3px solid transparent;
 }
 
 .sidebar__item:hover {
-  background-color: var(--plain__enabled__fill__hovered);
+  background-color: var(--surface-page, #f7f8fa);
+  color: var(--primary, #007bc0);
 }
 
 .sidebar__item--active {
-  background-color: var(--bosch-blue-95);
-  color: var(--bosch-blue-50);
+  background-color: rgba(0, 123, 192, 0.06);
+  color: var(--primary, #007bc0);
   font-weight: var(--font-weight-bold);
-}
-
-.sidebar__item--active::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background-color: var(--bosch-blue-50);
+  border-left-color: var(--primary, #007bc0);
 }
 
 .sidebar__icon {
@@ -75,15 +71,14 @@
 }
 
 .sidebar__divider {
-  padding: var(--space-4) var(--space-4) var(--space-2);
+  padding: var(--space-5) var(--space-5) var(--space-2);
   margin-top: var(--space-2);
-  border-top: 1px solid var(--border-default);
 }
 
 .sidebar__divider-label {
-  font-size: var(--font-size-xs);
+  font-size: 10px;
   font-weight: var(--font-weight-bold);
-  color: var(--text-muted);
+  color: var(--text-muted, #9da7b3);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }

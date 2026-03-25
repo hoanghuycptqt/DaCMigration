@@ -17,8 +17,16 @@ export const AppShell: React.FC<AppShellProps> = ({ children, className = '' }) 
         {children}
       </main>
       <footer className="app-shell__footer">
-        <span>v1.0.0</span>
-        <span>© Robert Bosch GmbH</span>
+        <div className="app-shell__footer-inner">
+          <div className="app-shell__footer-left">
+            <span className="app-shell__footer-copyright">© 2026 Robert Bosch GmbH — DaC Migration Portal v0.1</span>
+          </div>
+          <div className="app-shell__footer-links">
+            <a href="#">Legal Notice</a>
+            <a href="#">Data Protection</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
       </footer>
     </div>
   );

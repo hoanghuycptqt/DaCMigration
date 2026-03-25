@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AppShell from '../components/layout/AppShell';
 import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 import { RST_FILE_TREE, SAMPLE_RST_HTML, SAMPLE_RST_RAW } from '../data/fileTree';
 import type { FileTreeNode } from '../types';
 import './RstPreviewPage.css';
@@ -45,8 +46,8 @@ const RstPreviewPage: React.FC = () => {
         </div>
         <div className="preview-content">
           <div className="preview-tabs">
-            <button className={`preview-tab ${activeTab === 'html' ? 'preview-tab--active' : ''}`} onClick={() => setActiveTab('html')}>Rendered HTML</button>
-            <button className={`preview-tab ${activeTab === 'raw' ? 'preview-tab--active' : ''}`} onClick={() => setActiveTab('raw')}>Raw RST</button>
+            <Button variant="ghost" size="sm" className={`preview-tab ${activeTab === 'html' ? 'preview-tab--active' : ''}`} onClick={() => setActiveTab('html')}>Rendered HTML</Button>
+            <Button variant="ghost" size="sm" className={`preview-tab ${activeTab === 'raw' ? 'preview-tab--active' : ''}`} onClick={() => setActiveTab('raw')}>Raw RST</Button>
           </div>
           <div className="preview-body">
             {activeTab === 'html' ? (

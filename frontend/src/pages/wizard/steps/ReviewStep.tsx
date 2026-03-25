@@ -3,6 +3,7 @@ import type { MigrationType } from '../../../types';
 import { MIGRATION_TYPES } from '../../../data/migrations';
 import NotificationBanner from '../../../components/feedback/NotificationBanner';
 import Badge from '../../../components/ui/Badge';
+import Button from '../../../components/ui/Button';
 import './steps.css';
 
 interface ReviewStepProps {
@@ -21,7 +22,9 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ selectedType, onEditStep }) => 
       <div className="review-section">
         <div className="review-section__header">
           <span className="review-section__title">Migration Type</span>
-          <button className="review-section__edit" onClick={() => onEditStep(1)}>✏️ Edit</button>
+          <Button variant="ghost" size="sm" onClick={() => onEditStep(1)}>
+            <span className="material-symbols-outlined" style={{fontSize: 14}}>edit</span> Edit
+          </Button>
         </div>
         <div className="review-section__value">
           <Badge variant="primary">{typeInfo?.title ?? 'Not selected'}</Badge>
@@ -31,20 +34,24 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ selectedType, onEditStep }) => 
       <div className="review-section">
         <div className="review-section__header">
           <span className="review-section__title">Repository</span>
-          <button className="review-section__edit" onClick={() => onEditStep(2)}>✏️ Edit</button>
+          <Button variant="ghost" size="sm" onClick={() => onEditStep(2)}>
+            <span className="material-symbols-outlined" style={{fontSize: 14}}>edit</span> Edit
+          </Button>
         </div>
         <div className="review-section__value">
           <a href="#">bosch-engineering/sw-pkg-cc-eal-dac</a>
           <span style={{ margin: '0 var(--space-2)' }}>|</span>
           Branch: migration/doors-requirements-2024
-          <Badge variant="success" className="badge" style={{ marginLeft: 'var(--space-2)' }}>New</Badge>
+          <span style={{ marginLeft: 'var(--space-2)' }}><Badge variant="success">New</Badge></span>
         </div>
       </div>
 
       <div className="review-section">
         <div className="review-section__header">
           <span className="review-section__title">Source Configuration</span>
-          <button className="review-section__edit" onClick={() => onEditStep(3)}>✏️ Edit</button>
+          <Button variant="ghost" size="sm" onClick={() => onEditStep(3)}>
+            <span className="material-symbols-outlined" style={{fontSize: 14}}>edit</span> Edit
+          </Button>
         </div>
         <div className="review-section__value">SW Package: CC_EAL • 2 modules configured</div>
       </div>
@@ -52,7 +59,9 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ selectedType, onEditStep }) => 
       <div className="review-section">
         <div className="review-section__header">
           <span className="review-section__title">Files</span>
-          <button className="review-section__edit" onClick={() => onEditStep(4)}>✏️ Edit</button>
+          <Button variant="ghost" size="sm" onClick={() => onEditStep(4)}>
+            <span className="material-symbols-outlined" style={{fontSize: 14}}>edit</span> Edit
+          </Button>
         </div>
         <div className="review-section__value">3 files — 23.1 MB</div>
       </div>
@@ -60,7 +69,9 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ selectedType, onEditStep }) => 
       <div className="review-section">
         <div className="review-section__header">
           <span className="review-section__title">Mapping</span>
-          <button className="review-section__edit" onClick={() => onEditStep(5)}>✏️ Edit</button>
+          <Button variant="ghost" size="sm" onClick={() => onEditStep(5)}>
+            <span className="material-symbols-outlined" style={{fontSize: 14}}>edit</span> Edit
+          </Button>
         </div>
         <div className="review-section__value">3 of 4 modules mapped</div>
       </div>

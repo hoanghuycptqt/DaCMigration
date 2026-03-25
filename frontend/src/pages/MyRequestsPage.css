@@ -1,15 +1,10 @@
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-bottom: var(--space-6); }
 .stat-card { text-align: center; padding: var(--space-4) !important; }
-.stat-card__label { display: block; font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--space-1); }
+.stat-card__label { display: block; font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--space-1); text-transform: uppercase; letter-spacing: 0.05em; }
 .stat-card__value { display: block; font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); }
 .stat-card__value--primary { color: var(--primary); }
 .stat-card__value--success { color: var(--signal-success); }
 .stat-card__value--error { color: var(--signal-error); }
 
 .requests-table-card { overflow: hidden; }
-.requests-filter-bar { display: flex; gap: var(--space-3); padding: var(--space-4); border-bottom: 1px solid var(--border-default); }
-.clickable-row { cursor: pointer; }
-.clickable-row:hover { background-color: var(--surface-selected) !important; }
-.repo-cell, .branch-cell { font-family: var(--font-family-mono); font-size: var(--font-size-xs); }
-.action-icon { background: none; border: none; cursor: pointer; font-size: var(--font-size-md); }
-.table-pagination { display: flex; justify-content: space-between; padding: var(--space-3) var(--space-4); font-size: var(--font-size-sm); color: var(--text-secondary); border-top: 1px solid var(--border-default); }
+/* Filter bar, clickable-row, repo/branch cell, and pagination styles are now in bosch-tokens.css */

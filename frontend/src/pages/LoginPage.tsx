@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/ui/Button';
+import boschLogo from '../assets/bosch-logo.svg';
 import './LoginPage.css';
 
 const LoginPage: React.FC = () => {
@@ -9,7 +10,7 @@ const LoginPage: React.FC = () => {
   return (
     <div className="login-page">
       <div className="login-card">
-        <div className="login-card__logo" />
+        <img src={boschLogo} alt="Bosch" className="login-card__logo" />
         <h1 className="login-card__title">DaC Migration Portal</h1>
         <p className="login-card__subtitle">
           Migrate engineering artifacts to Doc-as-Code repositories

@@ -1,9 +1,9 @@
 import type { User } from '../types';
 
 export const CURRENT_USER: User = {
-  name: 'Nguyen Van A',
-  ntid: 'NAM1ABC',
-  email: 'nam1abc@bosch.com',
+  name: 'Truong Hoang Huy (MS/EET22)',
+  ntid: 'HUT3THH',
+  email: 'hut3thh@bosch.com',
   role: 'ADMIN',
   status: 'Active',
   lastLogin: '2024-03-20 14:00',

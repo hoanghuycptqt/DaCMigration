@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AppShell from '../../components/layout/AppShell';
 import Card from '../../components/ui/Card';
+import Button from '../../components/ui/Button';
 import { TYPE_BREAKDOWN, TOP_USERS } from '../../data/statistics';
 import './admin.css';
 
@@ -17,7 +18,7 @@ const StatisticsPage: React.FC = () => {
 
       <div className="presets">
         {[{ key: '7d', label: 'Last 7 days' }, { key: '30d', label: 'Last 30 days' }, { key: '3m', label: 'Last 3 months' }, { key: 'all', label: 'All time' }].map((p) => (
-          <button key={p.key} className={`preset-btn ${period === p.key ? 'preset-btn--active' : ''}`} onClick={() => setPeriod(p.key)}>{p.label}</button>
+          <Button key={p.key} variant={period === p.key ? 'primary' : 'secondary'} size="sm" onClick={() => setPeriod(p.key)}>{p.label}</Button>
         ))}
       </div>
 

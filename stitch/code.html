@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DaC Migration Portal - Start a Migration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#bfc7d2",
+                        "tertiary-fixed": "#ffdad5",
+                        "primary-fixed-dim": "#97cbff",
+                        "surface-bright": "#f7f9ff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#edf1f8",
+                        "on-surface": "#171c21",
+                        "surface-container": "#eaeef5",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#001d36",
+                        "secondary-fixed-dim": "#9ecaff",
+                        "secondary": "#1a619d",
+                        "on-secondary-container": "#004c80",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#83bdfe",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "on-primary-container": "#fffeff",
+                        "inverse-surface": "#2c3136",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#004a76",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#be0004",
+                        "on-tertiary-fixed": "#410000",
+                        "primary-fixed": "#cee5ff",
+                        "on-tertiary-fixed-variant": "#930002",
+                        "surface-tint": "#00639b",
+                        "surface-dim": "#d6dae1",
+                        "tertiary-container": "#ed0007",
+                        "surface-container-low": "#f0f4fb",
+                        "surface-container-highest": "#dee3ea",
+                        "on-tertiary-container": "#fffeff",
+                        "on-surface-variant": "#404750",
+                        "secondary-fixed": "#d1e4ff",
+                        "surface-container-high": "#e4e8ef",
+                        "outline": "#707882",
+                        "surface": "#f7f9ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#00497c",
+                        "primary": "#006199",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#97cbff",
+                        "background": "#f7f9ff",
+                        "primary-container": "#007bc0",
+                        "on-primary-fixed": "#001d33",
+                        "surface-variant": "#dee3ea",
+                        "on-background": "#171c21"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="bg-slate-800 dark:bg-slate-950 text-white flex justify-between items-center px-6 h-16 w-full fixed top-0 z-50 shadow-lg font-['Inter'] antialiased">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-white tracking-tight">DaC Migration Portal</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-sm font-medium text-slate-300">Admin Role</span>
+<button class="hover:bg-slate-700 transition-colors p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+<div class="w-8 h-8 bg-slate-600 flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" data-alt="professional corporate user profile avatar silhouette on a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtFSGUVSZPBzcRM_o_hERZot1Zgj1DP15ZIvo2oV0n0VF5ypZvvFRGV2jDulGr256ckrBtXWcy4N9ygQEoI7HdAoAeI6OvwrymlBui2-CuBWNX3hkssTewmEkQ5HzDEpAOSRo7beonWfLBBTKZuLjeQXvLsAhSe6MpeycK9xhsdKQySAl5UnrfNX8gEih3ffJ8SFQygDeTjs3xgikd2x_DTjTUvLUt48BK5MnZ6JEBSZ2IRd9VGDYGdut7D_Ge5HlPHqeDYMw8_Fw"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 bg-slate-100 dark:bg-slate-900 flex flex-col transition-all duration-200 ease-in-out z-40 bg-slate-200 dark:bg-slate-800 border-r-0">
+<nav class="flex-1 py-6">
+<div class="space-y-1">
+<a class="flex items-center px-6 py-3 border-l-4 border-blue-600 bg-slate-200 dark:bg-slate-800 text-blue-700 dark:text-blue-400 text-sm font-medium tracking-wide uppercase transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="rocket_launch" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                    Migration
+                </a>
+<a class="flex items-center px-6 py-3 border-l-4 border-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium tracking-wide uppercase transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="folder_shared">folder_shared</span>
+                    My Space
+                </a>
+<a class="flex items-center px-6 py-3 border-l-4 border-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium tracking-wide uppercase transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="admin_panel_settings">admin_panel_settings</span>
+                    Administration
+                </a>
+</div>
+</nav>
+<div class="pb-6 space-y-1">
+<a class="flex items-center px-6 py-3 border-l-4 border-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium tracking-wide uppercase transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center px-6 py-3 border-l-4 border-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium tracking-wide uppercase transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="help">help</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-12 min-h-screen bg-surface-container-low">
+<div class="max-w-6xl mx-auto space-y-10">
+<!-- Page Header -->
+<div class="flex flex-col space-y-2">
+<h1 class="text-[2.75rem] font-bold text-on-surface tracking-tight leading-tight">Start a Migration</h1>
+<p class="text-on-surface-variant body-md">Initiate a new data migration workflow following the standardized engineering pipeline.</p>
+</div>
+<!-- Soft Info Blue Banner -->
+<div class="bg-secondary-fixed text-on-secondary-fixed-variant px-6 py-4 flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+<span class="text-sm font-bold tracking-wide uppercase">Recommended order: SW Architecture → Requirements → DSD → TestSpec</span>
+</div>
+<!-- Migration Type Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
+<!-- Card 1: SW Architecture -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">01</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="account_tree">account_tree</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">SW Architecture</h3>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Source: Enterprise Architect</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Structural decomposition and component hierarchy migration.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+<!-- Card 2: DOORS Requirements -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">02</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="description">description</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">DOORS Requirements</h3>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter">Automated</span>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">From DOORS via ReqIF</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Standard requirement modules transfer with full link integrity.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+<!-- Card 3: DNG Requirements -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">03</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="article">article</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">DNG Requirements</h3>
+<span class="bg-secondary text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter">Manual Upload</span>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">From DOORS Next Gen</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Direct CSV or XLSX import for cloud-based requirement sets.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+<!-- Card 4: DOORS DSD -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">04</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="schema">schema</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">DOORS DSD</h3>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter">Automated</span>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">From DOORS via ReqIF</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Detailed Software Design specifications for legacy platforms.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+<!-- Card 5: DNG DSD -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">05</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="lan">lan</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">DNG DSD</h3>
+<span class="bg-secondary text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter">Manual Upload</span>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">From DOORS Next Gen</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Software design migration for modern DOORS NG modules.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+<!-- Card 6: Rhapsody DSD -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">06</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="memory">memory</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">Rhapsody DSD</h3>
+<span class="bg-secondary text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter">Manual Upload</span>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">From IBM Rhapsody</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Model-based design components and diagram migration.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+<!-- Card 7: TestSpec -->
+<div class="bg-surface-container-lowest p-8 flex flex-col relative group cursor-pointer border-b-2 border-transparent hover:border-primary transition-all">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-4xl font-black text-surface-container-high select-none">07</span>
+</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="fact_check">fact_check</span>
+</div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">TestSpec</h3>
+<span class="bg-secondary text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter">Manual Upload</span>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">From Test Management Tool</p>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Validation and verification specification suites.</p>
+<button class="mt-auto self-start px-6 py-2 bg-gradient-to-r from-primary-container to-primary text-white text-xs font-bold uppercase tracking-widest">Select Mode</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 flex justify-between items-center px-8 w-full py-4 fixed bottom-0 z-50 tonal-shift">
+<div class="text-[11px] font-bold tracking-widest uppercase text-slate-500">
+            © 2024 DaC Migration Portal. v2.4.0-build.82
+        </div>
+<div class="flex gap-6">
+<a class="text-[11px] font-bold tracking-widest uppercase text-slate-400 hover:text-slate-900 transition-colors" href="#">Terms of Service</a>
+<a class="text-[11px] font-bold tracking-widest uppercase text-slate-400 hover:text-slate-900 transition-colors" href="#">Privacy Policy</a>
+</div>
+</footer>
+</body></html>

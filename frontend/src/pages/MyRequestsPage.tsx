@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppShell from '../components/layout/AppShell';
 import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 import { StatusBadge } from '../components/ui/Badge';
 import { SAMPLE_REQUESTS } from '../data/migrations';
 import './MyRequestsPage.css';
@@ -45,7 +46,7 @@ const MyRequestsPage: React.FC = () => {
                 <td><StatusBadge status={r.status} /></td>
                 <td>{r.startedAt ?? '—'}</td>
                 <td>{r.duration ?? '—'}</td>
-                <td><button className="action-icon" onClick={(e) => { e.stopPropagation(); navigate(`/requests/${r.id}`); }}>👁️</button></td>
+                <td><Button variant="ghost" size="sm" onClick={() => navigate(`/requests/${r.id}`)}><span className="material-symbols-outlined" style={{fontSize: 16}}>visibility</span></Button></td>
               </tr>
             ))}
           </tbody>

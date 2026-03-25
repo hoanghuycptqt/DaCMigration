@@ -17,9 +17,8 @@
 }
 
 .login-card__logo {
-  width: 64px;
   height: 64px;
-  background-color: var(--bosch-red-50);
+  width: auto;
   margin-bottom: var(--space-8);
 }
 
@@ -40,7 +39,7 @@
   width: 100%;
   padding: var(--space-4) var(--space-6) !important;
   font-size: var(--font-size-md) !important;
-  border-radius: var(--radius-md) !important;
+  border-radius: 0 !important;
 }
 
 .login-page__footer {

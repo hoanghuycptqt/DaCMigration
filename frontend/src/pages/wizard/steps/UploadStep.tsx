@@ -1,5 +1,6 @@
 import React from 'react';
 import NotificationBanner from '../../../components/feedback/NotificationBanner';
+import Button from '../../../components/ui/Button';
 import { UPLOADED_FILES } from '../../../data/wizard';
 import './steps.css';
 
@@ -41,7 +42,7 @@ const UploadStep: React.FC<UploadStepProps> = ({ isAutomated }) => {
             <span className="file-row__size">{file.size}</span>
             <div className="file-row__progress"><div className={`file-row__progress-fill ${file.progress === 100 ? 'file-row__progress-fill--complete' : 'file-row__progress-fill--uploading'}`} style={{ width: `${file.progress}%` }} /></div>
             <span className={file.status === 'Uploaded' ? 'file-row__status--uploaded' : 'file-row__status--uploading'}>{file.status === 'Uploaded' ? '✓ Uploaded' : 'Uploading...'}</span>
-            <button className="file-row__delete">🗑️</button>
+            <Button variant="ghost" size="sm"><span className="material-symbols-outlined" style={{fontSize: 16}}>delete</span></Button>
           </div>
         ))}
         <p className="text-muted" style={{ marginTop: 'var(--space-2)' }}>3 files — 23.1 MB total</p>

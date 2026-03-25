@@ -5,19 +5,18 @@ import { CURRENT_USER } from '../../data/users';
 import './Sidebar.css';
 
 const USER_MENU: SidebarItem[] = [
-  { icon: '⌂', label: 'Home', path: '/' },
-  { icon: '+', label: 'New Migration', path: '/wizard' },
-  { icon: '☰', label: 'My Requests', path: '/requests' },
-  { icon: 'ⓘ', label: 'Help', path: '/help' },
+  { icon: 'home', label: 'Home', path: '/' },
+  { icon: 'add_circle', label: 'New Migration', path: '/wizard' },
+  { icon: 'folder_shared', label: 'My Space', path: '/requests' },
 ];
 
 const ADMIN_MENU: SidebarItem[] = [
-  { icon: '▦', label: 'Dashboard', path: '/admin', adminOnly: true },
-  { icon: '◫', label: 'All Requests', path: '/admin/requests', adminOnly: true },
-  { icon: '⟳', label: 'Monitoring', path: '/admin/monitoring', adminOnly: true },
-  { icon: '◩', label: 'Statistics', path: '/admin/statistics', adminOnly: true },
-  { icon: '⚇', label: 'Users', path: '/admin/users', adminOnly: true },
-  { icon: '♥', label: 'System Health', path: '/admin/health', adminOnly: true },
+  { icon: 'dashboard', label: 'Dashboard', path: '/admin', adminOnly: true },
+  { icon: 'list_alt', label: 'All Requests', path: '/admin/requests', adminOnly: true },
+  { icon: 'monitor_heart', label: 'Monitoring', path: '/admin/monitoring', adminOnly: true },
+  { icon: 'bar_chart', label: 'Statistics', path: '/admin/statistics', adminOnly: true },
+  { icon: 'group', label: 'Users', path: '/admin/users', adminOnly: true },
+  { icon: 'favorite', label: 'System Health', path: '/admin/health', adminOnly: true },
 ];
 
 interface SidebarProps {
@@ -43,7 +42,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
             className={`sidebar__item ${isActive(item.path) ? 'sidebar__item--active' : ''}`}
             onClick={() => navigate(item.path)}
           >
-            <span className="sidebar__icon">{item.icon}</span>
+            <span className="material-symbols-outlined sidebar__icon"
+              style={isActive(item.path) ? { fontVariationSettings: "'FILL' 1" } : undefined}
+            >{item.icon}</span>
             <span className="sidebar__label">{item.label}</span>
           </button>
         ))}
@@ -59,7 +60,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
                 className={`sidebar__item ${isActive(item.path) ? 'sidebar__item--active' : ''}`}
                 onClick={() => navigate(item.path)}
               >
-                <span className="sidebar__icon">{item.icon}</span>
+                <span className="material-symbols-outlined sidebar__icon">{item.icon}</span>
                 <span className="sidebar__label">{item.label}</span>
               </button>
             ))}
@@ -71,3 +72,4 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
 };
 
 export default Sidebar;
+

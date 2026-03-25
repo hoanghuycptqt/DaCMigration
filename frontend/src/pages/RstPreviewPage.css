@@ -8,7 +8,7 @@
 .tree-item__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .preview-tabs { display: flex; border-bottom: 1px solid var(--border-default); }
-.preview-tab { padding: var(--space-3) var(--space-4); background: none; border: none; cursor: pointer; font-size: var(--font-size-base); font-family: var(--font-family); color: var(--text-secondary); border-bottom: 2px solid transparent; }
+.preview-tab { padding: var(--space-3) var(--space-4); background: none; border: none; cursor: pointer; font-size: var(--font-size-base); font-family: var(--font-family); color: var(--text-secondary); border-bottom: 2px solid transparent; border-radius: 0 !important; }
 .preview-tab--active { color: var(--primary); border-bottom-color: var(--primary); font-weight: var(--font-weight-medium); }
 
 .preview-body { padding: var(--space-6); overflow-y: auto; flex: 1; }
@@ -21,4 +21,4 @@
 .rst-rendered th { background-color: var(--surface-table-header); padding: var(--space-2) var(--space-3); text-align: left; font-weight: var(--font-weight-semibold); border: 1px solid var(--border-default); }
 .rst-rendered td { padding: var(--space-2) var(--space-3); border: 1px solid var(--border-default); }
 
-.rst-raw { font-family: var(--font-family-mono); font-size: var(--font-size-sm); line-height: 1.6; white-space: pre; color: var(--text-primary); background: var(--surface-page); padding: var(--space-4); border-radius: var(--radius-md); overflow-x: auto; }
+.rst-raw { font-family: var(--font-family-mono); font-size: var(--font-size-sm); line-height: 1.6; white-space: pre; color: var(--text-primary); background: var(--surface-page); padding: var(--space-4); border-radius: 0; overflow-x: auto; }

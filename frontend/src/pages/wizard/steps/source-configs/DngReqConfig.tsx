@@ -9,7 +9,7 @@ const DngReqConfig: React.FC = () => (
     <div className="form-group"><label className="form-label">Context URL (GC Configuration)</label><div className="form-input-wrapper"><input className="form-input form-input--success" defaultValue="https://dng.bosch.com/gc/configuration/123" /><span className="form-input-icon">✓</span></div></div>
     <h3 className="section-label">DNG Module URLs</h3>
     <div className="url-list">
-      {DNG_REQ_URLS.map((url, i) => (<div className="url-row" key={i}><input className="form-input" defaultValue={url} /><button className="url-row__delete">✕</button></div>))}
+      {DNG_REQ_URLS.map((url, i) => (<div className="url-row" key={i}><input className="form-input" defaultValue={url} /><Button variant="ghost" size="sm"><span className="material-symbols-outlined" style={{fontSize: 16}}>close</span></Button></div>))}
       <div className="url-row"><input className="form-input" placeholder="Enter DNG module URL..." /></div>
     </div>
     <Button variant="ghost" size="sm" className="add-row-btn">+ Add Module URL</Button>

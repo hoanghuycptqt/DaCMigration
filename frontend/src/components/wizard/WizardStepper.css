@@ -6,9 +6,9 @@
 .wizard-stepper {
   display: flex;
   align-items: center;
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
+  background-color: var(--surface-container-lowest, #fff);
+  border: none;
+  border-radius: 0;
   padding: var(--space-4) var(--space-6);
   gap: 0;
 }

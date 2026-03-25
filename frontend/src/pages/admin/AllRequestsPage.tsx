@@ -12,8 +12,8 @@ const AllRequestsPage: React.FC = () => {
 
   return (
     <AppShell>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-6)' }}>
-        <h1 className="page-title" style={{ marginBottom: 0 }}>All Migration Requests</h1>
+      <div className="page-header">
+        <h1 className="page-title">All Migration Requests</h1>
         <Button variant="ghost">Export as CSV</Button>
       </div>
 
@@ -38,7 +38,7 @@ const AllRequestsPage: React.FC = () => {
                 <td><StatusBadge status={r.status} /></td>
                 <td>{r.startedAt ?? '—'}</td>
                 <td>{r.duration ?? '—'}</td>
-                <td><button className="action-icon" onClick={(e) => { e.stopPropagation(); navigate(`/requests/${r.id}`); }}>👁️</button></td>
+                <td><Button variant="ghost" size="sm" onClick={() => navigate(`/requests/${r.id}`)}><span className="material-symbols-outlined" style={{fontSize: 16}}>visibility</span></Button></td>
               </tr>
             ))}
           </tbody>

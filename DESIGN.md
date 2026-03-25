@@ -79,24 +79,27 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
 - **Heading Character:** Bold weight (700), minimal letter-spacing, hierarchical sizing from `2em` (h1) downward. Headlines are direct and unadorned — no decorative transformations
 - **Body Character:** Regular weight (400), comfortable reading line-height (1.15 base). Clean and efficient — optimized for scanning technical content
 - **Monospace:** System monospace stack (`monospace, monospace`) for code blocks, JSON previews, log output, and RST raw views
-- **Icon Fonts:** Two icon font families are available:
-  - `Bosch-Icon` — 500+ domain-specific icons (e.g., `boschicon-bosch-ic-document`, `boschicon-bosch-ic-settings`, `boschicon-bosch-ic-upload`, `boschicon-bosch-ic-chart-bar`, `boschicon-bosch-ic-checkmark`)
-  - `Bosch-UI-Icon` — UI-specific icons (e.g., `ui-ic-alert-info`, `ui-ic-alert-error`, `ui-ic-alert-success`, `ui-ic-close`, `ui-ic-down`, `ui-ic-search`)
+- **Icon System:** Material Symbols Outlined (loaded via Google Fonts CDN). All icons use the `material-symbols-outlined` class with `FILL 0, wght 400, GRAD 0, opsz 24` settings. Example icons used throughout:
+  - Navigation: `home`, `add_circle`, `folder_open`, `dashboard`, `list_alt`, `monitoring`, `bar_chart`, `group`, `favorite`
+  - Actions: `refresh`, `check_circle`, `cancel`, `error`, `warning`, `settings`, `help`, `logout`
+  - Service-specific: `dns`, `database`, `mail`, `code`, `air`
 
 ---
 
 ## 4. Component Stylings
 
+> **Key convention:** All components use `border-radius: 0` (sharp corners) throughout the application, consistent with Bosch's engineering-precision aesthetic. No rounded buttons, cards, or inputs.
+
 ### Buttons
-- **Primary (Major Accent):** Filled with Corporate Blue (`#007bc0`), white text. Hover deepens to `#00629a`, pressed to `#004975`. Pill or subtly rounded — never sharp-edged. Disabled: gray fill (`#c1c7cc`) with muted text (`#8a9097`)
-- **Secondary (Minor Accent):** Transparent fill, Corporate Blue text. On hover, fills with Sky Blue Wash (`#d1e4ff`). Ghost-style buttons for secondary actions
+- **Primary (Major Accent):** Filled with Corporate Blue (`#007bc0`), white text, `border-radius: 0`. Hover deepens to `#00629a`, pressed to `#004975`. Disabled: gray fill (`#c1c7cc`) with muted text (`#8a9097`)
+- **Secondary (Minor Accent / Ghost):** Transparent fill with Corporate Blue border and text. On hover, fills with Corporate Blue and white text. Ghost-style buttons for secondary actions (e.g., "Check Now" on System Health)
 - **Neutral:** Lightest Gray fill (`#eff1f2`), black text. For non-priority actions like "Cancel" or "Back"
 - **Integrated:** Fully transparent, text-only with underline behavior. Used for inline links and navigation triggers
 
 ### Cards / Containers
-- **Primary surface cards:** White background, no visible border. Separation achieved through background contrast with the parent surface (secondary gray `#eff1f2`)
-- **Floating elements:** White background with subtle shadow (`rgba(0,0,0,0.25)`) — used for dropdowns, popovers, tooltips, modal overlays
-- **Contrast panels:** Dark Slate background (`#2e3033`), white text — for header bars, sidebar in contrast mode
+- **Primary surface cards:** White background, `border-radius: 0`, left accent border (4px colored left edge indicating status). Separation achieved through background contrast with the parent surface (secondary gray `#f0f4fb`)
+- **Floating elements:** White background with subtle shadow (`0 8px 24px rgba(0,0,0,0.12)`) — used for dropdowns, popovers, tooltips, modal overlays
+- **Contrast panels:** Dark backgrounds — header uses `#2e3033`, footer uses `#212121`
 
 ### Inputs / Forms
 - **Text Fields:** Clean with subtle border styling. Error/success/warning states indicated by colorized bottom border and notification text below the field
@@ -114,10 +117,12 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
   - Major variants: saturated color fill with white text for higher emphasis
 
 ### Tables
-- **Header:** Secondary gray background (`#e0e2e5`), bold text
-- **Rows:** Alternating white / lightest gray for scanability
-- **Hover:** Subtle blue tint row highlight
+- **Container:** White background, `border-radius: 0`, `1px solid` subtle border
+- **Header:** Transparent background with 2px solid bottom border, uppercase 11px labels with 0.06em letter-spacing. Bold weight, `--on-surface` color
+- **Rows:** White background, 1px bottom border separators. No alternating colors — hover highlight only (`#f5f7fa`)
 - **Sortable columns:** Caret icon indicators
+- **Filter bar:** Inline within table container, subtle bottom border separator
+- **Pagination:** Bottom row with page info and navigation
 
 ### Progress Indicators
 - **Linear bar:** Inner bar fills proportionally with configurable `data-progress` attribute
@@ -129,9 +134,11 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
 - **Scrollable body** when content exceeds viewport
 
 ### Side Navigation
-- **Collapsed state:** Icon-only narrow rail
-- **Expanded state:** Full panel with text labels, nested accordion sub-menus
-- **Trigger animation:** CSS transition on expand/collapse
+- **Layout:** Fixed left panel, 240px wide, white background, right border. Extends from below header to bottom of viewport (no gap)
+- **Items:** Uppercase labels, 0.04em letter-spacing, 48px item height. 3px transparent left border becomes Corporate Blue when active
+- **Active state:** Light blue tinted background `rgba(0, 123, 192, 0.06)`, bold weight, Corporate Blue text and left border
+- **Hover state:** Light gray background, Corporate Blue text
+- **Section dividers:** "ADMINISTRATION" label in 10px uppercase, bold, muted color
 
 ### Tabs
 - **Tab bar:** Horizontal row, selected tab gets `-selected` class with active blue indicator
@@ -156,35 +163,46 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
 ## 6. Application Shell & Navigation
 
 ### 6.1 Global Header (All Roles)
-- **Left:** Bosch logo (Signature Red) + App name "DaC Migration Portal"
-- **Right:** User display name, role badge (minor signal blue for USER, minor signal purple for ADMIN), logout button (integrated style)
-- **Surface:** Contrast (`-contrast`) — Dark Slate background, white text
+- **Layout:** Fixed top bar, full width, height 56px, z-index 200
+- **Surface:** Dark Slate background (`#2e3033`), white text. 6px Bosch-red supergraphic bar at bottom edge
+- **Left section:** Bosch logo (SVG, Signature Red) + vertical separator + "DaC Migration Portal" text
+- **Right section:** User identity area with:
+  - **Avatar circle:** 36px, Corporate Blue background, white initials (first letter of first name + first letter of last name, ignoring parenthetical department codes like "(MS/EET22)"). Example: "Truong Hoang Huy (MS/EET22)" → "TH"
+  - **User name:** Displayed next to avatar in white text
+  - **Dropdown chevron:** Material Symbols `expand_more` icon
+  - **Dropdown menu (on click):** White floating panel anchored to user trigger button. Width matches trigger button width (dynamic). Contains:
+    - User info section: name (bold), email, role badge ("USER" blue or "ADMIN" purple)
+    - Separator line
+    - Menu items with Material Symbols icons: Settings (`settings`), Help (`help`)
+    - Separator line  
+    - Logout item (red danger style) with `logout` icon
 
 ### 6.2 Left Sidebar Navigation
 
 **User Role — Menu Items:**
-1. 🏠 **Home** — Migration type selection
-2. ➕ **New Migration** — Starts wizard (same as clicking a card on Home)
-3. 📋 **My Requests** — List of user's own migrations
-4. ℹ️ **Help** — Documentation / tooltips reference
+1. `home` **HOME** — Migration type selection (path: `/`)
+2. `add_circle` **NEW MIGRATION** — Starts wizard (path: `/wizard`)
+3. `folder_open` **MY SPACE** — List of user's own migrations (path: `/requests`)
 
-**Admin Role — Menu Items (includes all User items plus):**
-1. 🏠 **Home** — Migration type selection
-2. ➕ **New Migration** — Starts wizard
-3. 📋 **My Requests** — Admin's own migrations
-4. 📊 **Admin Dashboard** — Overview with summary cards
-5. 📄 **All Requests** — All users' migrations
-6. 🔄 **Monitoring** — Real-time DAG executions
-7. 📈 **Statistics** — Charts and analytics
-8. 👥 **User Management** — Manage users and roles
-9. 🏥 **System Health** — Service health checks
-10. ℹ️ **Help**
+**Admin Role — Additional items below "ADMINISTRATION" divider:**
+4. `dashboard` **DASHBOARD** — Overview with summary cards (path: `/admin`)
+5. `list_alt` **ALL REQUESTS** — All users' migrations (path: `/admin/requests`)
+6. `monitoring` **MONITORING** — Real-time DAG executions (path: `/admin/monitoring`)
+7. `bar_chart` **STATISTICS** — Charts and analytics (path: `/admin/statistics`)
+8. `group` **USERS** — Manage users and roles (path: `/admin/users`)
+9. `favorite` **SYSTEM HEALTH** — Service health checks (path: `/admin/health`)
 
-**Visual:** Collapsible side navigation — icon-only when collapsed, full labels when expanded. Active item highlighted with Corporate Blue left border + Sky Blue Wash background. Admin section separated by a horizontal divider with "Administration" label.
+> **Note:** Settings and Help are accessed via the header user dropdown menu, not the sidebar. No bottom section in sidebar.
+
+**Visual:** Fixed left panel, white background. Active item highlighted with Corporate Blue 3px left border + light blue tinted background. Admin section separated by a horizontal divider with "ADMINISTRATION" label in 10px uppercase muted text.
 
 ### 6.3 Footer (All Roles)
-- App version number (left), "© Robert Bosch GmbH" (right)
-- Lightest Gray Canvas background, small Charcoal text
+- **Position:** Fixed at bottom of viewport, full width, z-index 200
+- **Surface:** Dark charcoal background (`#212121`)
+- **Left:** Copyright text: "© 2026 Robert Bosch GmbH — DaC Migration Portal v0.1" in 11px muted white (`rgba(255,255,255,0.5)`)
+- **Right:** Legal links row: "Legal Notice", "Data Protection", "Terms of Service" in 11px white (`rgba(255,255,255,0.6)`), hover → full white
+- **Content padding:** `var(--space-4) var(--space-8)` (16px vertical, 32px horizontal)
+- **Note:** Main content area has `72px` bottom padding to compensate for the fixed footer
 
 ---
 
@@ -594,23 +612,39 @@ After triggering, user is taken to the **Request Detail View** (same as accessin
 
 ### 8.6 System Health Page (Admin Only)
 - **Page title:** "System Health"
-- **Manual refresh button:** "Check Now" (minor accent button, `boschicon-bosch-ic-refresh`) — top right
-- **Auto-refresh indicator:** "Auto-checking every 60 seconds" label with countdown
+- **Manual refresh button:** "Check Now" (ghost button with `refresh` Material Symbols icon + Corporate Blue border) — top right of page header
+- **Auto-refresh indicator:** "Auto-checking every 60s" label in muted text, right of button
 
-**Health cards grid (one card per service):**
+**Summary Bar (below header):**
+- Horizontal banner with left accent border (4px)
+- **All healthy:** Green left border, green background tint (`#e7f5e9`), `verified` icon, "All systems operational" text
+- **Issues detected:** Red left border, red background tint (`#fdecea`), `warning` icon, "X service(s) require attention" text
+- Counts row below: "✓ N Healthy" (green) + "✗ N Unhealthy" (red) with corresponding icons
 
-| Service | Endpoint checked |
-|---|---|
-| Airflow Server | REST API ping |
-| Windows Server — ReqIF Parser | `/migration/api/reqif/api/v1/reqif/parse-file` ping |
-| Windows Server — Precheck | TBD endpoint ping |
-| Windows Server — Postcheck | TBD endpoint ping |
-| Windows Server — DOORS Export | TBD endpoint ping |
-| GitHub Enterprise | API v3 ping |
-| MySQL Database | JDBC connection check |
-| SMTP Server | Connection check |
+**Service List (table-style layout):**
 
-**Each health card:**
-- **Healthy state:** White card, green left border, large green dot icon (`boschicon-bosch-ic-checkmark`), service name, "Healthy" label, response time in ms, last checked timestamp
-- **Unhealthy state:** White card, red left border, large red dot icon (`boschicon-bosch-ic-alert-error`), service name, "Unhealthy" label in Error Red, error message text in a scrollable box, last checked timestamp
-- Cards sorted: unhealthy services appear first
+| Column | Width | Content |
+|---|---|---|
+| **STATUS** | 140px | Colored dot (10px circle with 3px glow ring) + "Healthy" / "Unhealthy" label |
+| **SERVICE** | flex | Material Symbols icon (contextual: `dns`, `database`, `mail`, `code`, `air`) + service name |
+| **RESPONSE TIME** | 220px | Progress bar track (6px height, gray background) with blue fill proportional to response time (max 300ms scale). Yellow fill (`--signal-warning`) if >150ms. Numeric value in ms beside bar |
+| **LAST CHECKED** | 120px | Relative timestamp (e.g., "2 min ago") in muted text |
+
+**Service rows:**
+- White background, 1px bottom borders, hover highlight (`#f9fafb`)
+- **Unhealthy rows:** Light red tinted background (`#fef8f8`)
+- **Error banner:** Full-width sub-row spanning all columns when a service is unhealthy — light red background with `error` icon + error message text in Error Red
+- Rows sorted: unhealthy services appear first
+
+**Monitored services:**
+
+| Service | Icon | Endpoint checked |
+|---|---|---|
+| Windows Server — Precheck | `dns` | Server ping at 10.0.1.25:8443 |
+| Airflow Server | `air` | REST API ping |
+| Windows Server — ReqIF Parser | `dns` | API endpoint ping |
+| Windows Server — Postcheck | `dns` | API endpoint ping |
+| Windows Server — DOORS Export | `dns` | API endpoint ping |
+| GitHub Enterprise | `code` | API v3 ping |
+| MySQL Database | `database` | JDBC connection check |
+| SMTP Server | `mail` | Connection check |

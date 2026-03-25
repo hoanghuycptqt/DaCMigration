@@ -1,6 +1,6 @@
 /* ============================================================
-   Button — Aligned with Bosch Frontend Kit button patterns
-   Uses: major-accent (primary), neutral, minor-accent (ghost)
+   Button — Stitch Corporate-Industrial Minimalism
+   Sharp 0px corners. Gradient primary. No drop shadows.
    ============================================================ */
 
 .btn {
@@ -9,52 +9,54 @@
   justify-content: center;
   gap: var(--space-2);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+              opacity var(--transition-fast);
   white-space: nowrap;
   line-height: 1;
 }
 
 .btn:disabled {
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
-/* Sizes (Bosch uses 48px/40px/32px standard heights) */
+/* Sizes (Bosch 48/40/32px heights) */
 .btn--sm { padding: 6px var(--space-3); font-size: var(--font-size-xs); min-height: 32px; }
 .btn--md { padding: var(--space-2) var(--space-4); font-size: var(--font-size-base); min-height: 40px; }
 .btn--lg { padding: var(--space-3) var(--space-6); font-size: var(--font-size-md); min-height: 48px; }
 
-/* Primary — Bosch major-accent */
+/* Primary — Stitch gradient from primary-container to primary */
 .btn--primary {
-  background-color: var(--major-accent__enabled__fill__default);
-  color: var(--major-accent__enabled__front__default);
+  background: linear-gradient(to right, var(--primary-container, #007bc0), var(--primary-stitch, #006199));
+  color: var(--bosch-white, #fff);
 }
 .btn--primary:hover:not(:disabled) {
-  background-color: var(--major-accent__enabled__fill__hovered);
+  opacity: 0.9;
 }
 .btn--primary:active:not(:disabled) {
-  background-color: var(--major-accent__enabled__fill__pressed);
+  opacity: 0.85;
 }
 .btn--primary:disabled {
-  background-color: var(--bosch-gray-80);
+  background: var(--bosch-gray-80);
   color: var(--bosch-gray-60);
 }
 
-/* Secondary — Bosch neutral */
+/* Secondary — Ghost border with primary color */
 .btn--secondary {
-  background-color: var(--neutral__enabled__fill__default);
-  color: var(--neutral__enabled__front__default);
-  border: none;
+  background-color: transparent;
+  color: var(--primary-stitch, #006199);
+  border: 1px solid rgba(191, 199, 210, 0.4);
 }
 .btn--secondary:hover:not(:disabled) {
-  background-color: var(--neutral__enabled__fill__hovered);
+  background-color: rgba(206, 229, 255, 0.2);
 }
 .btn--secondary:disabled {
-  background-color: var(--bosch-gray-90);
   color: var(--bosch-gray-70);
+  border-color: var(--bosch-gray-85);
 }
 
 /* Neutral — Bordered outline */
@@ -84,14 +86,29 @@
   color: var(--bosch-gray-60);
 }
 
-/* Ghost — Bosch minor-accent (integrated link-style) */
+/* Ghost — Integrated, no background/border (Stitch "Integrated" button) */
 .btn--ghost {
   background: none;
-  color: var(--minor-accent__enabled__front__default);
+  color: var(--primary-stitch, #006199);
 }
 .btn--ghost:hover:not(:disabled) {
-  background-color: var(--minor-accent__enabled__fill__hovered);
+  background-color: rgba(206, 229, 255, 0.2);
 }
 .btn--ghost:disabled {
   color: var(--bosch-gray-80);
+}
+
+/* Stitch gradient small button (for migration cards) */
+.btn--gradient-sm {
+  background: linear-gradient(to right, var(--primary-container, #007bc0), var(--primary-stitch, #006199));
+  color: var(--bosch-white, #fff);
+  padding: 8px 24px;
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-height: auto;
+}
+.btn--gradient-sm:hover:not(:disabled) {
+  opacity: 0.9;
 }
