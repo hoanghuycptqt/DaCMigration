@@ -24,9 +24,6 @@ const LoginPage: React.FC = () => {
           Sign in with Bosch ID
         </Button>
       </div>
-      <footer className="login-page__footer">
-        © Robert Bosch GmbH
-      </footer>
     </div>
   );
 };

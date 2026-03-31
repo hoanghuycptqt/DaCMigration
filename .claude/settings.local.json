@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(git fetch:*)",
+      "Bash(git reset:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -r -i footer C:UsersURU1HCDesktopDACDaCMigrationfrontendsrc --include=*.css --include=*.tsx --include=*.ts --include=*.jsx --include=*.js)",
+      "Bash(echo \"APPDATA: $APPDATA\")",
+      "Bash(echo \"LOCALAPPDATA: $LOCALAPPDATA\")",
+      "Read(//c/Users/URU1HC/Desktop/DAC/DaCMigration/$LOCALAPPDATA/Google/**)",
+      "Read(//c/Users/URU1HC/Desktop/DAC/DaCMigration/$LOCALAPPDATA/**)",
+      "Read(//c/Users/URU1HC/Desktop/DAC/DaCMigration/$LOCALAPPDATA/Google/Chrome/User Data/**)",
+      "Read(//c/Users/URU1HC/Desktop/DAC/DaCMigration/$LOCALAPPDATA/BraveSoftware/Brave-Browser/User Data/**)",
+      "Bash(reg query:*)",
+      "Bash(tasklist)",
+      "Bash(reg add:*)",
+      "Bash(cmd.exe /c 'reg add \"HKCU\\\\Software\\\\BraveSoftware\\\\Brave-Browser\\\\NativeMessagingHosts\\\\com.anthropic.claude_code_browser_extension\" /ve /d \"C:\\\\Users\\\\URU1HC\\\\AppData\\\\Roaming\\\\Claude Code\\\\ChromeNativeHost\\\\com.anthropic.claude_code_browser_extension.json\" /f')",
+      "Bash(cp:*)",
+      "Bash(taskkill //F //FI \"WINDOWTITLE eq *temp_dir*chrome-claude*\")",
+      "Bash(git add:*)"
+    ]
+  }
+}

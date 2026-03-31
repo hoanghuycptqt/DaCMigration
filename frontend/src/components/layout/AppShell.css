@@ -1,6 +1,6 @@
 /* ============================================================
    AppShell — Bosch CI Layout
-   Surface-container-low canvas. Dark Bosch footer.
+   Surface-container-low canvas.
    ============================================================ */
 
 .app-shell {
@@ -13,58 +13,9 @@
   margin-top: calc(var(--header-height) + 6px);
   margin-left: var(--sidebar-width);
   padding: var(--space-8) var(--content-padding);
-  padding-bottom: calc(var(--space-8) + 72px);
+  padding-bottom: var(--space-8);
   flex: 1;
   background-color: var(--surface-container-low, #f0f4fb);
   min-height: calc(100vh - var(--header-height));
 }
 
-/* ── Footer — Bosch Dark Style ── */
-.app-shell__footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: var(--z-header);
-  background-color: #212121;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 0;
-}
-
-.app-shell__footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-4) var(--space-8);
-}
-
-.app-shell__footer-left {
-  display: flex;
-  align-items: center;
-  gap: var(--space-6);
-}
-
-.app-shell__footer-copyright {
-  font-size: 11px;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.app-shell__footer-links {
-  display: flex;
-  gap: var(--space-5);
-}
-
-.app-shell__footer-links a {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.03em;
-  transition: color var(--transition-fast);
-}
-
-.app-shell__footer-links a:hover {
-  color: #fff;
-}

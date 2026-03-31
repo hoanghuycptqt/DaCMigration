@@ -35,7 +35,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: var(--space-6);
-  padding-bottom: 80px; /* account for fixed footer */
+  padding-bottom: 0;
 }
 
 /* ── Migration Card ── */

@@ -99,7 +99,7 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
 ### Cards / Containers
 - **Primary surface cards:** White background, `border-radius: 0`, left accent border (4px colored left edge indicating status). Separation achieved through background contrast with the parent surface (secondary gray `#f0f4fb`)
 - **Floating elements:** White background with subtle shadow (`0 8px 24px rgba(0,0,0,0.12)`) — used for dropdowns, popovers, tooltips, modal overlays
-- **Contrast panels:** Dark backgrounds — header uses `#2e3033`, footer uses `#212121`
+- **Contrast panels:** Dark backgrounds — header uses `#2e3033`
 
 ### Inputs / Forms
 - **Text Fields:** Clean with subtle border styling. Error/success/warning states indicated by colorized bottom border and notification text below the field
@@ -149,7 +149,7 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
 ## 5. Layout Principles
 
 - **Surface Context Layering:** The entire layout system is built on nested surface contexts (`-primary`, `-secondary`, `-contrast`, `-floating`). Each context automatically adjusts all child component colors — this is the fundamental design mechanism. Components don't set their own colors; they inherit from their surface context
-- **Structure:** Classic admin layout — fixed header, collapsible left sidebar navigation, scrollable main content area, minimal footer
+- **Structure:** Classic admin layout — fixed header, left sidebar navigation, scrollable main content area
 - **Spacing Strategy:** Consistent use of rem-based spacing. Generous padding within containers, tighter spacing between related elements. The system favors whitespace over borders for element separation
 - **Grid:** Content area uses a responsive container (`e-container`) with fluid margins
 - **Breakpoints:**
@@ -195,14 +195,6 @@ The Bosch design language is **Corporate-Industrial Minimalism** — clean, stru
 > **Note:** Settings and Help are accessed via the header user dropdown menu, not the sidebar. No bottom section in sidebar.
 
 **Visual:** Fixed left panel, white background. Active item highlighted with Corporate Blue 3px left border + light blue tinted background. Admin section separated by a horizontal divider with "ADMINISTRATION" label in 10px uppercase muted text.
-
-### 6.3 Footer (All Roles)
-- **Position:** Fixed at bottom of viewport, full width, z-index 200
-- **Surface:** Dark charcoal background (`#212121`)
-- **Left:** Copyright text: "© 2026 Robert Bosch GmbH — DaC Migration Portal v0.1" in 11px muted white (`rgba(255,255,255,0.5)`)
-- **Right:** Legal links row: "Legal Notice", "Data Protection", "Terms of Service" in 11px white (`rgba(255,255,255,0.6)`), hover → full white
-- **Content padding:** `var(--space-4) var(--space-8)` (16px vertical, 32px horizontal)
-- **Note:** Main content area has `72px` bottom padding to compensate for the fixed footer
 
 ---
 

@@ -41,10 +41,3 @@
   font-size: var(--font-size-md) !important;
   border-radius: 0 !important;
 }
-
-.login-page__footer {
-  position: fixed;
-  bottom: var(--space-4);
-  color: var(--text-muted);
-  font-size: var(--font-size-xs);
-}
